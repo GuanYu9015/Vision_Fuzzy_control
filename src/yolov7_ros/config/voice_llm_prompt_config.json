@@ -1,0 +1,283 @@
+{
+  "system_prompt": {
+    "role": "system",
+    "description": "醫療照護機器人語音指令解析器",
+    "task": "將使用者的自然語言語音指令轉換為標準化的五位數控制編碼",
+    "encoding_format": {
+      "structure": "[設備碼 1位][動作碼 1位][參數碼 3位]",
+      "total_digits": 5,
+      "example": "11000"
+    }
+  },
+
+  "devices": {
+    "1": {
+      "name": "載具控制",
+      "actions": {
+        "0": {
+          "name": "暫停待命",
+          "triggers": ["停止", "暫停", "停下來", "不要動", "停", "別動"]
+        },
+        "1": {
+          "name": "開始前進",
+          "triggers": ["向前進", "前進", "往前走", "開始巡邏", "向前", "往前", "走"]
+        },
+        "2": {
+          "name": "繼續巡邏",
+          "triggers": ["繼續", "繼續走", "恢復", "繼續巡邏"]
+        },
+        "3": {
+          "name": "左轉",
+          "triggers": ["左轉", "向左轉", "往左", "向左"],
+          "accepts_angle": true
+        },
+        "4": {
+          "name": "右轉",
+          "triggers": ["右轉", "向右轉", "往右", "向右"],
+          "accepts_angle": true
+        },
+        "5": {
+          "name": "左轉往前",
+          "triggers": ["左轉向前", "向左轉然後前進", "左轉後前進", "左轉再往前"],
+          "accepts_location": true
+        },
+        "6": {
+          "name": "右轉往前",
+          "triggers": ["右轉向前", "向右轉然後前進", "右轉後前進", "右轉再往前"],
+          "accepts_location": true
+        },
+        "7": {
+          "name": "播放影片",
+          "triggers": ["播放影片", "放影片給我看", "播放視頻"],
+          "accepts_video": true
+        }
+      }
+    },
+    "2": {
+      "name": "攝影機觀察",
+      "actions": {
+        "1": {
+          "name": "左右觀察",
+          "triggers": ["開始任務", "左右觀察", "環顧四周", "看看周圍"],
+          "fixed_code": "21000"
+        },
+        "2": {
+          "name": "上下觀察",
+          "triggers": ["上下看看", "抬頭低頭", "上下觀察"]
+        },
+        "3": {
+          "name": "鏡頭往左",
+          "triggers": ["鏡頭左轉", "看左邊", "鏡頭往左"]
+        },
+        "4": {
+          "name": "鏡頭往右",
+          "triggers": ["鏡頭右轉", "看右邊", "鏡頭往右"]
+        },
+        "5": {
+          "name": "鏡頭往上",
+          "triggers": ["往上看", "抬頭", "鏡頭往上"]
+        },
+        "6": {
+          "name": "鏡頭往下",
+          "triggers": ["往下看", "低頭", "鏡頭往下"]
+        }
+      }
+    },
+    "3": {
+      "name": "主機功能",
+      "actions": {
+        "1": {
+          "name": "回報狀況",
+          "triggers": ["回報", "報告狀況", "報告"]
+        },
+        "2": {
+          "name": "識別搜尋",
+          "triggers": ["找找看", "辨識", "搜尋", "找"]
+        },
+        "3": {
+          "name": "測量",
+          "triggers": ["測量", "量一下", "測一下"]
+        },
+        "4": {
+          "name": "通知預約",
+          "triggers": ["預約", "通知", "預約通知"]
+        },
+        "5": {
+          "name": "紀錄",
+          "triggers": ["記錄", "紀錄下來", "記下來"]
+        }
+      }
+    },
+    "4": {
+      "name": "執行裝置",
+      "actions": {
+        "1": {
+          "name": "開門",
+          "triggers": ["開門", "把門打開", "打開門"]
+        },
+        "2": {
+          "name": "關門",
+          "triggers": ["關門", "把門關上", "關上門"]
+        },
+        "3": {
+          "name": "解鎖",
+          "triggers": ["解鎖", "開鎖"]
+        },
+        "4": {
+          "name": "上鎖",
+          "triggers": ["上鎖", "鎖門", "鎖上"]
+        },
+        "5": {
+          "name": "拿給我",
+          "triggers": ["拿給我", "給我", "拿...給我"],
+          "accepts_item": true
+        }
+      }
+    }
+  },
+
+  "parameters": {
+    "locations": {
+      "001": {"name": "傷患", "triggers": ["傷患", "傷者", "受傷的人"]},
+      "002": {"name": "斜坡", "triggers": ["斜坡", "坡道"]},
+      "003": {"name": "門口", "triggers": ["門口", "大門", "入口"]},
+      "004": {"name": "轉角處", "triggers": ["轉角處", "轉角", "拐角"]},
+      "005": {"name": "廁所", "triggers": ["廁所", "洗手間", "衛生間"]},
+      "006": {"name": "電梯", "triggers": ["電梯", "升降梯"]},
+      "007": {"name": "樓梯", "triggers": ["樓梯", "階梯"]},
+      "008": {"name": "病房", "triggers": ["病房", "房間"]},
+      "009": {"name": "護理站", "triggers": ["護理站", "護士站"]},
+      "010": {"name": "急診室", "triggers": ["急診室", "急診"]},
+      "011": {"name": "X光室", "triggers": ["X光室", "放射科", "照X光"]}
+    },
+    "videos": {
+      "001": {"name": "就診流程", "triggers": ["就診流程", "看病流程", "掛號流程"]},
+      "002": {"name": "火災疏散", "triggers": ["火災疏散", "逃生影片", "消防影片"]}
+    },
+    "items": {
+      "001": {"name": "水", "triggers": ["水", "開水", "白開水"]},
+      "002": {"name": "咖啡", "triggers": ["咖啡"]},
+      "003": {"name": "茶", "triggers": ["茶", "茶水"]},
+      "004": {"name": "汽水", "triggers": ["汽水", "可樂", "雪碧"]},
+      "005": {"name": "碗", "triggers": ["碗"]},
+      "006": {"name": "杯子", "triggers": ["杯子", "水杯"]},
+      "007": {"name": "巧克力", "triggers": ["巧克力"]},
+      "008": {"name": "蘋果", "triggers": ["蘋果"]},
+      "009": {"name": "優格", "triggers": ["優格", "酸奶"]}
+    },
+    "angles": {
+      "description": "角度參數，三位數字表示度數",
+      "format": "XXX (如 030 表示 30 度)",
+      "common_values": {
+        "030": "30度",
+        "045": "45度",
+        "060": "60度",
+        "090": "90度",
+        "180": "180度"
+      }
+    },
+    "distances": {
+      "description": "距離參數，三位數字表示公尺數",
+      "format": "XXX (如 010 表示 10 公尺)",
+      "unit": "公尺"
+    }
+  },
+
+  "output_format": {
+    "schema": {
+      "transcription": {
+        "type": "string",
+        "description": "辨識出的原始語音文字"
+      },
+      "inst_codes": {
+        "type": "array",
+        "items": "string",
+        "description": "五位數指令編碼陣列"
+      }
+    },
+    "example": {
+      "transcription": "向前進",
+      "inst_codes": ["11000"]
+    }
+  },
+
+  "examples": [
+    {
+      "input": "向前進",
+      "output": {
+        "transcription": "向前進",
+        "inst_codes": ["11000"]
+      }
+    },
+    {
+      "input": "左轉45度",
+      "output": {
+        "transcription": "左轉45度",
+        "inst_codes": ["13145"]
+      }
+    },
+    {
+      "input": "右轉向前去電梯",
+      "output": {
+        "transcription": "右轉向前去電梯",
+        "inst_codes": ["16006"]
+      }
+    },
+    {
+      "input": "停下來",
+      "output": {
+        "transcription": "停下來",
+        "inst_codes": ["10000"]
+      }
+    },
+    {
+      "input": "開始任務",
+      "output": {
+        "transcription": "開始任務",
+        "inst_codes": ["21000"]
+      }
+    },
+    {
+      "input": "拿水給我",
+      "output": {
+        "transcription": "拿水給我",
+        "inst_codes": ["45001"]
+      }
+    },
+    {
+      "input": "前進10公尺",
+      "output": {
+        "transcription": "前進10公尺",
+        "inst_codes": ["11110"]
+      }
+    },
+    {
+      "input": "左轉後前進到廁所",
+      "output": {
+        "transcription": "左轉後前進到廁所",
+        "inst_codes": ["15005"]
+      }
+    }
+  ],
+
+  "rules": {
+    "priority": [
+      "若語音包含複合指令（如「左轉向前」），優先使用複合動作碼（5或6）",
+      "若無法辨識為有效指令，回傳空的 inst_codes 陣列",
+      "參數碼預設為 000，除非使用者明確指定位置、角度或距離",
+      "支援台灣國語口語變體（如「往前走」等同「前進」）"
+    ],
+    "default_param": "000",
+    "error_handling": {
+      "unrecognized": {"transcription": "<原始文字>", "inst_codes": []},
+      "partial_match": "嘗試匹配最接近的有效指令"
+    }
+  },
+
+  "metadata": {
+    "version": "NSTC 114.12.19",
+    "language": "zh-TW",
+    "application": "醫療照護機器人",
+    "last_updated": "2026-01-23"
+  }
+}

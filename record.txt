@@ -1,0 +1,3 @@
+roslaunch yolov7_ros integrated_system.launch profile:=true
+
+roslaunch yolov7_ros integrated_system.launch profile:=true 2>&1 | tee profile_log.txt

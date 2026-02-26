@@ -1,0 +1,35 @@
+camera_extrinsics:
+  height_m: 0.60
+  offset_from_robot_front_m: -0.15
+  pitch_deg: 29.0
+camera_intrinsics:
+  calibrated: true
+  cx: 316.49408414149354
+  cy: 211.28837267632412
+  distortion:
+  - -0.10591681036657939
+  - 0.7789954398604209
+  - 0.19384888077181628
+  - -0.009544953053091679
+  - -0.3830583027111288
+  fx: 519.251443206308
+  fy: 519.251443206308
+  height: 480
+  width: 640
+fuzzy_ranges:
+  e_d_dot_max: 2.08
+  e_d_dot_min: -2.08
+  e_d_max: 2.08
+  e_d_min: 0.0
+  e_l_dot_max: 1.0
+  e_l_dot_min: -1.0
+  e_l_max: 0.5
+  e_l_min: -0.5
+safety:
+  lateral_view_width_at_stop_m: 1.2
+  stop_distance_m: 1.04
+sensing_range:
+  max_distance_from_camera_m: 3.25
+  max_distance_from_robot_m: 3.1
+  min_distance_from_camera_m: 0.45
+  min_distance_from_robot_m: 0.3

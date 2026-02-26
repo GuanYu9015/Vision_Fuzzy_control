@@ -1,0 +1,32 @@
+
+<launch>
+  <!-- 參數設定 -->
+  <param name="use_sim_time" value="false" />
+
+  <!-- 道路檢測節點 (YOLO11 + TensorRT + BEV) -->
+  <node name="road_detection_node" pkg="yolov7_ros" type="mod_predict_yolo11_trt.py" output="screen" />
+
+  <!-- 模糊控制節點 (4輸入版本 + BEV) -->
+  <node name="fuzzy_controller_node" pkg="yolov7_ros" type="mod_fuzzy_control4.py" output="screen" />
+
+  <!-- 語音指令節點 -->
+  <node name="voice_command_node" pkg="yolov7_ros" type="mod_voice_processing4.py" output="screen">
+    <param name="test_mode" value="false" />
+  </node>
+
+  <!-- 整合控制節點 -->
+  <node name="integrated_controller_node" pkg="yolov7_ros" type="integrated_control4.py" output="screen" />
+
+  <!-- 模糊控制資料記錄器（可選，用於調參分析）-->
+  <arg name="enable_logger" default="true" />
+  <node name="fuzzy_data_logger" pkg="yolov7_ros" type="fuzzy_data_logger.py" output="screen" if="$(arg enable_logger)" />
+
+  <!-- 資源監控節點（可選，用於記錄系統資源使用量）-->
+  <arg name="enable_resource_monitor" default="true" />
+  <node name="resource_monitor_node" pkg="yolov7_ros" type="resource_monitor_node.py" output="screen" if="$(arg enable_resource_monitor)">
+    <param name="log_dir" value="$(find yolov7_ros)/outputs/resource_logs" />
+    <param name="interval" value="1.0" />
+    <param name="ready_delay" value="5.0" />
+  </node>
+
+</launch>

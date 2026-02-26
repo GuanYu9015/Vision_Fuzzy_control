@@ -1,0 +1,18 @@
+# Folder
+src/yolov7_ros/outputs
+src/yolov7_ros/docs
+src/yolov7_ros/include
+src/yolov7_ros/recordings
+src/detection_msgs
+src/rf2o_laser_odometry
+src/yolov7_ros/src/camera_fitting
+src/yolov7_ros/src/speed_analysis
+src/yolov7_ros/src/testoice
+
+
+/build
+/devel
+
+record.txt
+frames.pdf
+walkthrough.md

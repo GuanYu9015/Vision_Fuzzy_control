@@ -1,0 +1,52 @@
+ALSA lib pcm_dmix.c:1032:(snd_pcm_dmix_open) unable to open slave
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:1369:(snd_func_refer) Unable to find definition 'cards.0.pcm.hdmi.0:CARD=0,AES0=4,AES1=130,AES2=0,AES3=2'
+ALSA lib conf.c:5178:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5701:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:1369:(snd_func_refer) Unable to find definition 'cards.0.pcm.hdmi.0:CARD=0,AES0=4,AES1=130,AES2=0,AES3=2'
+ALSA lib conf.c:5178:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5701:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2664:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm_oss.c:377:(_snd_pcm_oss_open) Unknown field port
+ALSA lib pcm_oss.c:377:(_snd_pcm_oss_open) Unknown field port
+ALSA lib pcm_usb_stream.c:486:(_snd_pcm_usb_stream_open) Invalid type for card
+ALSA lib pcm_usb_stream.c:486:(_snd_pcm_usb_stream_open) Invalid type for card
+ALSA lib pcm_dmix.c:1005:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+ALSA lib pcm_dmix.c:1032:(snd_pcm_dmix_open) unable to open slave
+[INFO] [1765541162.388973]: 遮罩圖儲存目錄: /home/cir/ros/src/yolov7_ros/outputs/masks_20251212_200602
+[INFO] [1765541162.391214]: 正在載入 YOLO11 TensorRT 引擎: /home/cir/ros/src/yolov7_ros/src/ultralytics/runs/segment/yolo11_seg_model12/weights/best.engine
+Loading /home/cir/ros/src/yolov7_ros/src/ultralytics/runs/segment/yolo11_seg_model12/weights/best.engine for TensorRT inference...
+[12/12/2025-20:06:03] [TRT] [I] Loaded engine size: 4 MiB
+[12/12/2025-20:06:04] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +617, GPU +582, now: CPU 990, GPU 6910 (MiB)
+[12/12/2025-20:06:04] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +3, now: CPU 0, GPU 3 (MiB)
+[12/12/2025-20:06:04] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 986, GPU 6911 (MiB)
+[12/12/2025-20:06:04] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +9, now: CPU 0, GPU 12 (MiB)
+Loading /home/cir/ros/src/yolov7_ros/src/ultralytics/runs/segment/yolo11_seg_model12/weights/best.engine for TensorRT inference...
+[12/12/2025-20:06:05] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/12/2025-20:06:05] [TRT] [I] Loaded engine size: 4 MiB
+[12/12/2025-20:06:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 1509, GPU 7409 (MiB)
+[12/12/2025-20:06:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +4, now: CPU 0, GPU 16 (MiB)
+[12/12/2025-20:06:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 1505, GPU 7409 (MiB)
+[12/12/2025-20:06:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +1, GPU +9, now: CPU 1, GPU 25 (MiB)
+[ WARN:0@6.787] global /home/cir/opencv/modules/videoio/src/cap_gstreamer.cpp (1405) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+[INFO] [1765541165.883439]: 模型類別: {0: 'hallway'}
+[INFO] [1765541165.886361]: 正在啟動相機 (ID: 0)...
+[INFO] [1765541166.161449]: 相機成功啟動: 640x480
+[INFO] [1765541166.166138]: 影片儲存路徑: /home/cir/ros/src/yolov7_ros/outputs/detection_20251212_200606.avi
+[INFO] [1765541166.168186]: YOLO11 道路檢測節點啟動，按 'q' 鍵離開
+Loading /home/cir/ros/src/yolov7_ros/src/ultralytics/runs/segment/yolo11_seg_model12/weights/best.engine for TensorRT inference...
+[12/12/2025-20:06:06] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/12/2025-20:06:06] [TRT] [I] Loaded engine size: 4 MiB
+[12/12/2025-20:06:06] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 1527, GPU 7429 (MiB)
+[12/12/2025-20:06:06] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +3, now: CPU 1, GPU 28 (MiB)
+[12/12/2025-20:06:06] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 1523, GPU 7429 (MiB)
+[12/12/2025-20:06:06] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +10, now: CPU 1, GPU 38 (MiB)

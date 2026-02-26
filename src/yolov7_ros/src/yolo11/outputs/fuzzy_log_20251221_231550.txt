@@ -1,0 +1,3 @@
+# Fuzzy Inference Log - 2025-12-21 23:15:50
+# Format: timestamp, avg_inference_ms, count
+--------------------------------------------------
