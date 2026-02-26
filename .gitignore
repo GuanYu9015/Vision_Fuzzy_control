@@ -1,5 +1,4 @@
 # Folder
-src/detection_msgs/
 src/rf2o_laser_odometry/
 src/yolov7_ros/docs/
 src/yolov7_ros/include/
