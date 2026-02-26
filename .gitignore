@@ -5,7 +5,7 @@ src/yolov7_ros/docs/
 src/yolov7_ros/include/
 src/yolov7_ros/outputs/
 src/yolov7_ros/recordings/
-src/yolov7_ros/src/
+src/yolov7_ros/src
 
 build/
 devel/
